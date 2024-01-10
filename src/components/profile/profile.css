@@ -1,5 +1,45 @@
+.profile-info-container{
+    width: 50%;
+    justify-content: space-between;
+    margin: auto;
+    border: 1px solid black;
+    height: 10rem;
+    display: flex;
+}
+
 .image-placeholder{
 border-radius: 50%;
 width: 5rem;
 height: 5rem;
+border: 1px solid black;
+margin: 0.3rem;
+}
+
+.Profile-info{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-info{
+    display: flex;
+    justify-content:space-evenly ;
+}
+
+.container-2{
+    border: 2px solid black;
+    width: 50%;
+    height: 25rem;
+    margin: auto;
+}
+
+.actions{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.actions > *:hover{
+    cursor: pointer;
 }

@@ -8,7 +8,7 @@ function Main() {
 	const defaultEmail = "shadabkhan@gmail.com";
 	const defaultPassword = "shadab123";
 
-	const [loginStatus, setLoginStatus] = useState(false);
+	const [loginStatus, setLoginStatus] = useState(true);
 
 	const handleSubmit = (email, password) => {
 		if (email === defaultEmail && password === defaultPassword) {

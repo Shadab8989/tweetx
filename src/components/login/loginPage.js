@@ -14,7 +14,7 @@ function LoginPage({handleSubmit}) {
   return (
     <div>
     <form className='formClass' onSubmit={HandleSubmit}>
-        <input type='email' value = {email} onChange={(e) => {setEmail(e.target.value)}} placeholder='Email' className='emailInput'></input>
+        <input type='text' value = {email} onChange={(e) => {setEmail(e.target.value)}} placeholder='Email' className='emailInput'></input>
         <input type='password' value={password} onChange={(e) => {setPassword(e.target.value)}} placeholder='Password' className='passwordInput'></input>
         <button type='submit'>Login</button>
     </form>
