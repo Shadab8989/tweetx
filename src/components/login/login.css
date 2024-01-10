@@ -1,27 +1,52 @@
-.formClass{
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    margin-top: 10rem;
-    align-items: center;
+.formClass {
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	margin-top: 10rem;
+	align-items: center;
 }
 
 .formClass > * {
-    margin: 0.5rem 1rem;
-    width: 15rem;
-    border-radius: 7px;
-    outline: none;
+	margin: 0.5rem 1rem;
+	width: 15rem;
+	border-radius: 7px;
+	outline: none;
 }
 
-button{
-    width: 5rem !important;
-
+.formClass > input {
+	border: 1px solid black;
+}
+button {
+	width: 5rem !important;
 }
 
-.emailInput{
-    
+.buttonDiv {
+	display: flex;
+	justify-content: space-around;
 }
 
-.PasswordInput{
+.buttonDiv > * {
+	height: 2rem;
+	border-radius: 10px;
+}
 
+.forgot {
+	width: 9rem !important;
+}
+
+.forgot-password-div {
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	margin-top: 2rem;
+}
+
+.forgot-password-div > * {
+	width: 15rem;
+	border-radius: 7px;
+	margin: 0.5rem 1rem;
+}
+
+.display-none{
+    display: none !important;
 }

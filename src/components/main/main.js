@@ -5,10 +5,10 @@ import LoginPage from "../login/loginPage";
 import { useState } from "react";
 
 function Main() {
-	const defaultEmail = "shadabkhan@gmail.com";
-	const defaultPassword = "shadab123";
+	const defaultEmail = "sk@gmail.com";
+	let defaultPassword = "sk123";
 
-	const [loginStatus, setLoginStatus] = useState(true);
+	const [loginStatus, setLoginStatus] = useState(false);
 
 	const handleSubmit = (email, password) => {
 		if (email === defaultEmail && password === defaultPassword) {
@@ -18,9 +18,14 @@ function Main() {
 		}
 	};
 
+	const changePassword = (newPassword) => {
+		defaultPassword = newPassword;
+
+	}
+
 	return (
 		<>{
-			!loginStatus? (<LoginPage handleSubmit={handleSubmit}/>):(<><Navbar /><Outlet /></>)
+			!loginStatus? (<LoginPage handleSubmit={handleSubmit} changePassword={changePassword}/>):(<><Navbar /><Outlet /></>)
 		}
 		</>
 	);
