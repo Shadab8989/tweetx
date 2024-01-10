@@ -14,7 +14,7 @@ function Users() {
 			<div className="users-container">
 				{usersArray.map(user => {
           return (<>
-            <Individual name={user.name} followers={user.followers}/>
+            <Individual name={user.name} followers={user.followers} status={"Follow"}/>
             <hr></hr>
           </>)
         })}

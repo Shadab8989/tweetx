@@ -3,8 +3,8 @@ import './individual.css'
 import { useState } from 'react'
 import PersonImage from '../../personImage'
 
-function Individual({name,followers}) { 
-    const [followState,setFollowState] = useState('Follow')
+function Individual({name,followers,status}) { 
+    const [followState,setFollowState] = useState(status)
 
     const handleClick = () => {
         if(followState === "Follow"){setFollowState("Following")}
@@ -15,9 +15,9 @@ function Individual({name,followers}) {
     <div className='container'>
     <PersonImage />
     <div className='person-info'>
-        <h3>
+        <h4>
             {name}
-        </h3>
+        </h4>
         <p>Followers:{followers}</p>
     </div>
     <button className='follow-btn' onClick={handleClick}>{followState}</button>
