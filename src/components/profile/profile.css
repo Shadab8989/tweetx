@@ -1,5 +1,5 @@
 .profile-info-container{
-    width: 50%;
+    width: 40%;
     justify-content: space-between;
     margin: auto;
     border: 1px solid black;
@@ -9,10 +9,10 @@
 
 .image-placeholder{
 border-radius: 50%;
-width: 5rem;
-height: 5rem;
+width: 6rem;
+height: 6rem;
 border: 1px solid black;
-margin: 0.3rem;
+margin: 1rem;
 }
 
 .Profile-info{
@@ -29,8 +29,9 @@ margin: 0.3rem;
 }
 
 .container-2{
-    border: 2px solid black;
-    width: 50%;
+    border: 1px solid black;
+    border-top: none;
+    width: 40%;
     height: 25rem;
     margin: auto;
 }

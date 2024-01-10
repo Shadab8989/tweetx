@@ -1,0 +1,20 @@
+.main-container{
+    width: 50%;
+    margin: 2rem auto;
+    /* border: 2px solid black; */
+    height: fit-content;
+    padding: 1rem;
+
+}
+
+
+.write-btn{
+    width: 5rem;
+    height: 2.2rem;
+    border-radius: 10px;
+}
+
+.feed-container{
+    
+}
+

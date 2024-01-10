@@ -1,8 +1,20 @@
 import React from 'react'
+import "./feed.css"
+import IndividualTweet from './individualTweet/individualTweet'
 
 function Feed() {
   return (
-    <><p>Feed</p>
+    <><div className='main-container'>
+      <button className='write-btn'>Write</button>
+      <div className='feed-container'>
+      <IndividualTweet />
+      <IndividualTweet />
+      <IndividualTweet />
+      <IndividualTweet />
+      <IndividualTweet />
+
+      </div>
+    </div>
       
     </>
   )

@@ -1,0 +1,7 @@
+.users-container {
+	border: 2px solid black;
+	width: 50%;
+	height: fit-content;
+	margin: auto;
+	padding: 2rem;
+}

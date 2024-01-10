@@ -10,13 +10,13 @@ function Profile() {
 
   const postRef = useRef(null);
 	return (
-		<>
+		<div>
 			<p>Profile</p>
 			<div className="profile-info-container">
 				<div className="image-placeholder"></div>
 				<div className="Profile-info">
 					<div style={{width:'100%'}}>
-						<h2>Shadab Khan</h2>
+						<h2 style={{marginLeft:"2rem"}}>Shadab Khan</h2>
 						<div className="number-info">
               <p>Posts:511</p>
               <p>Followers:511</p>
@@ -35,7 +35,7 @@ function Profile() {
       {content === "Followers" && <Followers />}
       {content === "Following" && <Following />}
       </div>
-		</>
+		</div>
 	);
 }
 

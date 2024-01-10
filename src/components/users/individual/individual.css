@@ -1,0 +1,21 @@
+.container {
+	display: flex;
+    justify-content: space-between;
+}
+
+.person-image {
+	border-radius: 50%;
+	width: 4rem;
+	height: 4rem;
+	border: 1px solid black;
+	margin: 0.3rem;
+}
+
+.follow-btn{
+    width: 5.2rem;
+    height: 2.2rem;
+    border-radius: 10px;
+    justify-self: flex-end;
+	margin-top: 1rem;
+}
+
