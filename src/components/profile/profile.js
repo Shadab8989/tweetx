@@ -10,7 +10,7 @@ function Profile() {
 
   const postRef = useRef(null);
 	return (
-		<div>
+		<div className="mail-div">
 			<p>Profile</p>
 			<div className="profile-info-container">
 				<div className="image-placeholder"></div>
