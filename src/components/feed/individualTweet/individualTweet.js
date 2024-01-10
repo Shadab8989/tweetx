@@ -9,7 +9,7 @@ function IndividualTweet() {
     <div className='tweet-content'>
     <div className='tweet-head'>
          <h3>Shadab</h3>
-        <p>time</p>
+        <p>10 mins ago</p>
     </div>
         <div className='tweet-para'>Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
         Lorem ipsum dolor sit amet, elit, sed do eiusmod. </div>

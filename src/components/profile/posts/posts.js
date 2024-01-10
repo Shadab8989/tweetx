@@ -3,8 +3,7 @@ import IndividualTweet from '../../feed/individualTweet/individualTweet'
 
 function Posts() {
   return (
-    <div style={{overflowY:"auto"}}>
-      <p>Posts</p>
+    <div style={{padding:"0.5rem"}}>
       <IndividualTweet />
       <IndividualTweet />
       <IndividualTweet />

@@ -10,7 +10,6 @@ function Users() {
 
 	return (
 		<>
-			<p>Users</p>
 			<div className="users-container">
 				{usersArray.map(user => {
           return (<>

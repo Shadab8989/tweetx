@@ -18,9 +18,9 @@ function Profile() {
 					<div style={{width:'100%'}}>
 						<h2 style={{marginLeft:"2rem"}}>Shadab Khan</h2>
 						<div className="number-info">
-              <p>Posts:511</p>
-              <p>Followers:511</p>
-              <p>Following:511</p>
+              <p>Posts: 511</p>
+              <p>Followers: 511</p>
+              <p>Following: 511</p>
             </div>
 					</div>
 				</div>
