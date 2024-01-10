@@ -1,0 +1,17 @@
+.formClass{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.formClass > * {
+    margin: 0.5rem 1rem;
+}
+
+.emailInput{
+    
+}
+
+.PasswordInput{
+
+}
