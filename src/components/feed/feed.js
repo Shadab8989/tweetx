@@ -1,32 +1,36 @@
-import React from 'react'
-import "./feed.css"
-import IndividualTweet from './individualTweet/individualTweet'
-import { useRef } from 'react'
+import React from "react";
+import "./feed.css";
+import IndividualTweet from "./individualTweet/individualTweet";
+import { useSelector } from "react-redux";
+import WriteTweet from "../writeTweet/writeTweet";
 
 function Feed() {
-  const divRef = useRef(null);
-  const handleWriteClick = (event) => {
-    divRef.current.classList.add('display')
-  } 
-
-  return (
-    <><div className='main-container'>
-      <button className='write-btn' onClick={handleWriteClick}>Write</button>
-      <div ref={divRef} className='feed-post-container'>
-      <input className='feed-input'></input>
-      <button>Post</button>
-      </div>
-      <div className='feed-container'>
-      <IndividualTweet />
-      <IndividualTweet />
-      <IndividualTweet />
-      <IndividualTweet />
-      <IndividualTweet />
-      </div>
-    </div>
-      
-    </>
-  )
+  
+  const peopleFollowed = useSelector((state) => state.following.people);
+	const peopleName = peopleFollowed.map((people) => people.name);
+	const peopleTweets = useSelector((state) => state.tweets.tweetArray);
+  
+	const followedPeopleTweets = peopleTweets.filter((tweet) =>
+  peopleName.includes(tweet.name)
+	);
+  
+	return (
+    <>
+			<div className="main-container">
+      <WriteTweet />	
+				<div className="feed-container">
+					{followedPeopleTweets.map((tweet) => (
+						<IndividualTweet
+							key={tweet.name}
+							name={tweet.name}
+							time={tweet.time}
+							content={tweet.content}
+						/>
+					))}
+				</div>
+			</div>
+		</>
+	);
 }
 
-export default Feed
+export default Feed;

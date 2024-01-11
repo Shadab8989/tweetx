@@ -1,22 +1,20 @@
-import React from 'react'
-import "./individualTweet.css"
-import PersonImage from '../../personImage'
+import React from "react";
+import "./individualTweet.css";
+import PersonImage from "../../personImage";
 
-function IndividualTweet() {
-  return (
-    <div className='tweet-container'>
-    <PersonImage />
-    <div className='tweet-content'>
-    <div className='tweet-head'>
-         <h3>Shadab</h3>
-        <p>10 mins ago</p>
-    </div>
-        <div className='tweet-para'>Lorem ipsum dolor sit amet, elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Lorem ipsum dolor sit amet, elit, sed do eiusmod. </div>
-    </div>
-      
-    </div>
-  )
+function IndividualTweet({ name, time, content }) {
+	return (
+		<div className="tweet-container">
+			<PersonImage />
+			<div className="tweet-content">
+				<div className="tweet-head">
+					<h3>{name}</h3>
+					<p>{time}</p>
+				</div>
+				<div className="tweet-para">{content} </div>
+			</div>
+		</div>
+	);
 }
 
-export default IndividualTweet
+export default IndividualTweet;
