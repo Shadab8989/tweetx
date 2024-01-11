@@ -1,12 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import './navbar.css'
 
 function Navbar() {
 	return (
 		<>
 			<nav className="navbar navbar-expand-lg bg-body-tertiary">
 				<div className="container-fluid">
-					<Link className="navbar-brand" to="/">
+					<Link className="navbar-brand text" to="/">
 						TweetX
 					</Link>
 					<button
@@ -23,19 +24,35 @@ function Navbar() {
 					<div className="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 							<li className="nav-item">
-								<Link className="nav-link active" aria-current="page" to="/">
+								<NavLink
+									className={({ isActive }) =>
+										isActive ? "nav-link active link-active" : "nav-link"
+									}
+									aria-current="page"
+									to="/"
+								>
 									Feed
-								</Link>
+								</NavLink>
 							</li>
 							<li className="nav-item">
-								<Link className="nav-link" to="/users">
+								<NavLink
+									className={({ isActive }) =>
+										isActive ? "nav-link active link-active" : "nav-link"
+									}
+									to="/users"
+								>
 									Users
-								</Link>
+								</NavLink>
 							</li>
 							<li className="nav-item">
-								<Link className="nav-link" to="/profile">
+								<NavLink
+									className={({ isActive }) =>
+										isActive ? "nav-link active link-active" : "nav-link"
+									}
+									to="/profile"
+								>
 									Profile
-								</Link>
+								</NavLink>
 							</li>
 						</ul>
 					</div>

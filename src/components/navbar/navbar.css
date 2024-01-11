@@ -1,0 +1,10 @@
+.link-active{
+    color:rgb(230, 127, 144) !important;
+    font-weight: bold !important;
+}
+
+.text{
+    color:rgb(230, 127, 144);
+    font-weight: bold;
+    
+}

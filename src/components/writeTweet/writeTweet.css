@@ -12,5 +12,14 @@
 }
 
 .display-block {
-	display: block;
+	display: flex;
+	flex-direction: column;
+}
+
+.buttonsDiv {
+	display: flex;
+}
+
+.button-div > * {
+	border-radius: 7px;
 }

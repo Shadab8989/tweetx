@@ -15,6 +15,7 @@ function WriteTweet() {
 
 	const handleDiscardClick = (event) => {
 		divRef.current.classList.remove("display-block");
+		setInput("");
 	};
 	const handlePost = () => {
 		if (input) {
@@ -39,10 +40,12 @@ function WriteTweet() {
 					value={input}
 					onChange={(e) => setInput(e.target.value)}
 				></input>
-				<button style={{ margin: "0.5rem" }} onClick={handleDiscardClick}>
-					Discard
-				</button>
-				<button onClick={handlePost}>Post</button>
+				<div className="button-div">
+					<button style={{ margin: "0.5rem" }} onClick={handleDiscardClick}>
+						Discard
+					</button>
+					<button onClick={handlePost}>Post</button>
+				</div>
 			</div>
 		</div>
 	);

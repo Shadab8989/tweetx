@@ -6,7 +6,7 @@ function Following() {
 	const followingPeople = useSelector(state => state.following.people)
 	return (
 		<div>
-		{followingPeople.map((person) => 
+		{followingPeople.slice(1).map((person) => 
 			<Individual key={person.name} name={person.name} followers={person.followers} status={"Following"} />
 		)}
 			{/* <Individual name="Person 4" followers={243} status={"Follow"} />
