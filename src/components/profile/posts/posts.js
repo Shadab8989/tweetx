@@ -1,16 +1,29 @@
-import React from 'react'
-import IndividualTweet from '../../feed/individualTweet/individualTweet'
-import WriteTweet from '../../writeTweet/writeTweet'
+import React from "react";
+import IndividualTweet from "../../feed/individualTweet/individualTweet";
+import WriteTweet from "../../writeTweet/writeTweet";
+import { useSelector } from "react-redux";
 
 function Posts() {
-  return (
-    <div style={{padding:"0.5rem"}}>
-    <WriteTweet />
-      {/* <IndividualTweet />
+	const data = useSelector((state) => state.tweets.tweetArray);
+	const personalTweets = data.filter((tweet) => tweet.name === "Shadab Khan");
+
+	return (
+		<div style={{ padding: "0.5rem" }}>
+			<WriteTweet />
+			{personalTweets.map((tweet, index) => (
+				<IndividualTweet
+					key={index}
+					name={tweet.name}
+					time={tweet.time}
+					content={tweet.content}
+				/>
+			))}
+
+			{/* <IndividualTweet />
       <IndividualTweet />
       <IndividualTweet /> */}
-    </div>
-  )
+		</div>
+	);
 }
 
-export default Posts
+export default Posts;

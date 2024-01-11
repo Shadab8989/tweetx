@@ -1,27 +1,51 @@
-import React from 'react'
-import { useRef } from "react";
-
+import React from "react";
+import "./writeTweet.css";
+import { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTweet } from "../../features/tweets/tweetSlice";
 function WriteTweet() {
-    const divRef = useRef(null);
+	const [input, setInput] = useState("");
+	const divRef = useRef(null);
+
+	const dispatch = useDispatch();
+
 	const handleWriteClick = (event) => {
-		divRef.current.classList.add("display");
+		divRef.current.classList.add("display-block");
 	};
 
-    const handleDiscardClick = (event) => {
-        divRef.current.classList.remove('display')
-    }
-  return (
-    <div>
-      <button className="write-btn" onClick={handleWriteClick}>
-					Write
+	const handleDiscardClick = (event) => {
+		divRef.current.classList.remove("display-block");
+	};
+	const handlePost = () => {
+		if (input) {
+			const tweetObj = {
+				name: "Shadab Khan",
+				content: input,
+				time: "0 mins ago",
+			};
+			setInput("");
+			divRef.current.classList.remove("display-block");
+			dispatch(addTweet(tweetObj));
+		}
+	};
+	return (
+		<div>
+			<button className="write-btn" onClick={handleWriteClick}>
+				Write
+			</button>
+			<div ref={divRef} className="feed-post-container">
+				<input
+					className="feed-input"
+					value={input}
+					onChange={(e) => setInput(e.target.value)}
+				></input>
+				<button style={{ margin: "0.5rem" }} onClick={handleDiscardClick}>
+					Discard
 				</button>
-				<div ref={divRef} className="feed-post-container">
-					<input className="feed-input" type='textArea'></input>
-					<button style={{margin:"0.5rem"}} onClick={handleDiscardClick}>Discard</button>
-					<button>Post</button>
-				</div>
-    </div>
-  )
+				<button onClick={handlePost}>Post</button>
+			</div>
+		</div>
+	);
 }
 
-export default WriteTweet
+export default WriteTweet;

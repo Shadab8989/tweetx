@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    people:[]
+    people:[{name:"Shadab Khan",followers:"511"}]
 }
 
 export const followingSlice = createSlice({

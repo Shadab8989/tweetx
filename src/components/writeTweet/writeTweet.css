@@ -1,0 +1,16 @@
+.feed-post-container {
+	display: none;
+	margin: 1rem;
+}
+.feed-post-container > * {
+	border-radius: 7px;
+	margin-bottom: 0.5rem;
+}
+
+.feed-post-container > input {
+	width: 20rem;
+}
+
+.display-block {
+	display: block;
+}

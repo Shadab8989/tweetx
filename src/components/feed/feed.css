@@ -1,40 +1,13 @@
-.main-container{
-    width: 50%;
-    margin: 2rem auto;
-    /* border: 2px solid black; */
-    height: fit-content;
-    padding: 1rem;
+.main-container {
+	width: 50%;
+	margin: 2rem auto;
+	/* border: 2px solid black; */
+	height: fit-content;
+	padding: 1rem;
 }
 
-.write-btn{
-    width: 5rem;
-    height: 2.2rem;
-    border-radius: 10px;
-}
-
-.feed-container{
-    
-}
-
-.feed-post-container{
-    display: none;
-    margin: 1rem;
-}
-.feed-post-container > * {
-    border-radius: 7px;
-    margin-bottom: 0.5rem;
-}
-
-.feed-post-container > input{
-    width: 20rem;
-
-}
-
-.feed-post-container > button {
-    
-
-}
-
-.display{
-    display: block;
+.write-btn {
+	width: 5rem;
+	height: 2.2rem;
+	border-radius: 10px;
 }
