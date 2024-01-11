@@ -22,6 +22,7 @@ function LoginPage({ handleSubmit, changePassword }) {
 				className="formClass"
 				onSubmit={(event) => {
 					event.preventDefault();
+					HandleSubmit(event)
 				}}
 			>
 				<input
@@ -51,7 +52,7 @@ function LoginPage({ handleSubmit, changePassword }) {
 					>
 						Forgot Password?
 					</button>
-					<button className="submit" type="submit" onClick={HandleSubmit}>
+					<button className="submit" type="submit">
 						Login
 					</button>
 				</div>
@@ -61,7 +62,7 @@ function LoginPage({ handleSubmit, changePassword }) {
 				className="formClass forgot-password-div display-none"
 			>
 				<input
-        type="password"
+					type="password"
 					placeholder="Create New Password"
 					value={newPass}
 					onChange={(e) => {
@@ -69,7 +70,7 @@ function LoginPage({ handleSubmit, changePassword }) {
 					}}
 				/>
 				<input
-        type="password"
+					type="password"
 					placeholder="Re-enter New Password"
 					value={reEnter}
 					onChange={(e) => {

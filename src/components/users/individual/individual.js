@@ -1,30 +1,42 @@
-import React from 'react'
-import './individual.css'
-import { useState } from 'react'
-import PersonImage from '../../personImage'
+import React from "react";
+import "./individual.css";
+import { useState } from "react";
+import PersonImage from "../../personImage";
+import { useDispatch } from "react-redux";
+import { follow,unfollow } from "../../../features/following/followingSlice";
 
-function Individual({name,followers,status}) { 
-    const [followState,setFollowState] = useState(status)
+function Individual({ name, followers, status }) {
+	const [followState, setFollowState] = useState(status);
 
-    const handleClick = () => {
-        if(followState === "Follow"){setFollowState("Following")}
-        else{setFollowState("Follow")}
+	const personObj = {
+		name: name,
+		followers: followers,
+	};
 
-    }
-  return (
-    <div className='container'>
-    <PersonImage />
-    <div className='person-info'>
-        <h4>
-            {name}
-        </h4>
-        <p>Followers:{followers}</p>
-    </div>
-    <button className='follow-btn' onClick={handleClick}>{followState}</button>
-    
-      
-    </div>
-  )
+  const dispatch = useDispatch();
+
+	const handleClick = () => {
+		if (followState === "Follow") {
+			setFollowState("Following");
+      dispatch(follow(personObj))
+
+		} else {
+			setFollowState("Follow");
+      dispatch(unfollow(personObj))
+		}
+	};
+	return (
+		<div className="container">
+			<PersonImage />
+			<div className="person-info">
+				<h4>{name}</h4>
+				<p>Followers:{followers}</p>
+			</div>
+			<button className="follow-btn" onClick={handleClick}>
+				{followState}
+			</button>
+		</div>
+	);
 }
 
-export default Individual
+export default Individual;
