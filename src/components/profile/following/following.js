@@ -4,10 +4,9 @@ import { useSelector } from "react-redux";
 
 function Following() {
 	const followingPeople = useSelector((state) => state.following.people);
-	const others = followingPeople.slice(1); //everyone expect ourself
 	return (
 		<div>
-			{others.map((person) => {
+			{followingPeople.map((person) => {
 				return <>
 				<Individual
 					key={person.name}

@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    people:[{name:"Shadab Khan",followers:"511"}]
+    people:[],
+    ourself:{name:"Shadab Khan",followers:4}
 }
 
 export const followingSlice = createSlice({
@@ -10,7 +11,6 @@ export const followingSlice = createSlice({
     reducers:{
         follow: (state,action) => {
             state.people.push(action.payload)
-            console.log(state.people)
         },
         unfollow:(state,action) =>{
             state.people = state.people.filter((person) => person.name !== action.payload.name)

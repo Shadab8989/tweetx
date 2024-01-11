@@ -22,7 +22,7 @@ function Profile() {
 						<div className="number-info">
 							<p>Posts: {tweetData}</p>
 							<p>Followers: 4</p>
-							<p>Following: {followingData.length - 1}</p>
+							<p>Following: {followingData.length}</p>
 						</div>
 					</div>
 				</div>
