@@ -1,10 +1,9 @@
 import React from "react";
-import Navbar from "../navbar/navbar";
-import { Outlet } from "react-router-dom";
 import LoginPage from "../login/loginPage";
 import { useState } from "react";
 import store from "../../store/store";
 import { Provider } from "react-redux";
+import Content from "../content";
 
 function Main() {
 	const defaultEmail = "sk@gmail.com";
@@ -32,10 +31,8 @@ function Main() {
 					changePassword={changePassword}
 				/>
 			) : (
-				<>
-					<Navbar />
-					<Outlet />
-				</>
+				<Content />
+				
 			)}
 		</Provider>
 	);
