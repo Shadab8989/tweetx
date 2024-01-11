@@ -82,20 +82,8 @@ const tweetSlice = createSlice({
 	initialState,
 	reducers: {
 		addTweet: (state, action) => {
-			state.tweetArray.push(action.payload);
+			state.tweetArray.unshift(action.payload);
 			state.personalTweet += 1;
-			// const sortFunction = (obj1, obj2) => {
-			// 	let t1, t2;
-			// 	obj1.time[1] !== " "
-			// 		? (t1 = obj1.time.slice(0, 2))
-			// 		: (t1 = obj1.time.slice(0, 1));
-			// 	obj2.time[1] !== " "
-			// 		? (t2 = obj2.time.slice(0, 2))
-			// 		: (t2 = obj2.time.slice(0, 1));
-
-			// 	return Number(t1) - Number(t2);
-			// };
-            // state.tweetArray.sort((a,b) =>sortFunction(a,b))
 		},
 	},
 });

@@ -9,11 +9,11 @@ function WriteTweet() {
 
 	const dispatch = useDispatch();
 
-	const handleWriteClick = (event) => {
+	const handleWriteClick = () => {
 		divRef.current.classList.add("display-block");
 	};
 
-	const handleDiscardClick = (event) => {
+	const handleDiscardClick = () => {
 		divRef.current.classList.remove("display-block");
 		setInput("");
 	};
