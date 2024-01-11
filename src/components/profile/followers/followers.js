@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 function Followers() {
 	const data = useSelector((state) => state.following.people);
 
-  const usersArray = [
+	const usersArray = [
 		{ name: "Person 1", followers: 2000 },
 		{ name: "Person 2", followers: 750 },
 		{ name: "Person 3", followers: 230 },
@@ -20,10 +20,20 @@ function Followers() {
 
 	return (
 		<div>
-    {usersArray.map(person => 
-      <Individual key={person.name} name={person.name} followers={person.followers} status={updatedState(person)} />
-    )}
-			</div>
+			{usersArray.map((person) => {
+				return (
+					<>
+						<Individual
+							key={person.name}
+							name={person.name}
+							followers={person.followers}
+							status={updatedState(person)}
+						/>
+						<hr />
+					</>
+				);
+			})}
+		</div>
 	);
 }
 

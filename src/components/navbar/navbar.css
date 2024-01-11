@@ -8,3 +8,12 @@
     font-weight: bold;
     
 }
+
+.nav-link:focus{
+    outline:none
+}
+
+.navbar-brand:active,.navbar-brand:focus{
+    color : rgb(230, 127, 144);
+    outline: none
+}

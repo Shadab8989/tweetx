@@ -1,40 +1,60 @@
 import React from "react";
 import "./profile.css";
-import { useState,useRef } from "react";
+import { useState } from "react";
 import Posts from "./posts/posts";
 import Followers from "./followers/followers";
-import Following from './following/following'
+import Following from "./following/following";
+import { useSelector } from "react-redux";
 function Profile() {
-  const [content,setContent] = useState('Post')
+	const [content, setContent] = useState("Post");
 
+	const followingData = useSelector((state) => state.following.people);
+	const tweetData = useSelector((state) => state.tweets.personalTweet);
 
-  const postRef = useRef(null);
 	return (
-		<div className="mail-div">
+		<div className="main-div">
 			<p>Profile</p>
 			<div className="profile-info-container">
 				<div className="image-placeholder"></div>
 				<div className="Profile-info">
-					<div style={{width:'100%'}}>
-						<h2 style={{marginLeft:"2rem"}}>Shadab Khan</h2>
+					<div style={{ width: "100%" }}>
+						<h2>Shadab Khan</h2>
 						<div className="number-info">
-              <p>Posts: 511</p>
-              <p>Followers: 511</p>
-              <p>Following: 511</p>
-            </div>
+							<p>Posts: {tweetData}</p>
+							<p>Followers: 4</p>
+							<p>Following: {followingData.length - 1}</p>
+						</div>
 					</div>
 				</div>
 			</div>
-      <div className="container-2">
-      <div className="actions">
-        <p onClick={() => {setContent('Post')}} >Posts</p>
-        <p onClick={() => {setContent('Followers')}} >Followers</p>
-        <p onClick={() => {setContent('Following')}} >Following</p>
-      </div>
-      {content === "Post" && <Posts />}
-      {content === "Followers" && <Followers />}
-      {content === "Following" && <Following />}
-      </div>
+			<div className="container-2">
+				<div className="actions">
+					<p
+						onClick={() => {
+							setContent("Post");
+						}}
+					>
+						Posts
+					</p>
+					<p
+						onClick={() => {
+							setContent("Followers");
+						}}
+					>
+						Followers
+					</p>
+					<p
+						onClick={() => {
+							setContent("Following");
+						}}
+					>
+						Following
+					</p>
+				</div>
+				{content === "Post" && <Posts />}
+				{content === "Followers" && <Followers />}
+				{content === "Following" && <Following />}
+			</div>
 		</div>
 	);
 }

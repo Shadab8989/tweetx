@@ -35,11 +35,11 @@ function WriteTweet() {
 				Write
 			</button>
 			<div ref={divRef} className="feed-post-container">
-				<input
+				<textarea
 					className="feed-input"
 					value={input}
 					onChange={(e) => setInput(e.target.value)}
-				></input>
+				></textarea>
 				<div className="button-div">
 					<button style={{ margin: "0.5rem" }} onClick={handleDiscardClick}>
 						Discard
