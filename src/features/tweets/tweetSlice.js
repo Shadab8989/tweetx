@@ -75,15 +75,14 @@ const initialState = {
 			time: "8 mins ago",
 		},
 	],
-	personalTweet: 0,
+	personalTweet: [],
 };
 const tweetSlice = createSlice({
 	name: "tweet",
 	initialState,
 	reducers: {
 		addTweet: (state, action) => {
-			state.tweetArray.push(action.payload);
-			state.personalTweet += 1;
+			state.personalTweet.unshift(action.payload);
 		},
 	},
 });

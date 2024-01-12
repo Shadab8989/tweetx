@@ -19,7 +19,7 @@ function Profile() {
 					<div style={{ width: "100%" }}>
 						<h2>Shadab Khan</h2>
 						<div className="number-info">
-							<p>Posts: {tweetData}</p>
+							<p>Posts: {tweetData.length}</p>
 							<p>Followers: 4</p>
 							<p>Following: {followingData.length}</p>
 						</div>

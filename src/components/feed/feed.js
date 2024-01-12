@@ -8,13 +8,13 @@ import { useState, useEffect } from "react";
 function Feed() {
 	const [displayOrder, setDisplayOrder] = useState([]);
 	const peopleFollowed = useSelector((state) => state.following.people);
-	const ourself = useSelector((state) => state.following.ourself);
+	const personalTweets = useSelector(state => state.tweets.personalTweet) 
 	const names = peopleFollowed.map((people) => people.name);
 	const peopleTweets = useSelector((state) => state.tweets.tweetArray);
 
 	useEffect(() => {
-		let displayTweets = peopleTweets.filter(
-			(tweet) => names.includes(tweet.name) || tweet.name === ourself.name
+		let peopleTweetsSort = peopleTweets.filter(
+			(tweet) => names.includes(tweet.name)
 		);
 		const sortFunction = (obj1, obj2) => {
 			let t1, t2;
@@ -27,9 +27,9 @@ function Feed() {
 
 			return Number(t1) - Number(t2);
 		};
-		displayTweets.sort((a, b) => sortFunction(a, b));
-		setDisplayOrder(displayTweets);
-	}, [peopleFollowed, peopleTweets]);
+		peopleTweetsSort.sort((a, b) => sortFunction(a, b));
+		setDisplayOrder(personalTweets.concat(peopleTweetsSort));
+	}, [peopleFollowed, personalTweets]);
 
 	return (
 		<>

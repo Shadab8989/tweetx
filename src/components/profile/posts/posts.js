@@ -4,13 +4,13 @@ import WriteTweet from "../../writeTweet/writeTweet";
 import { useSelector } from "react-redux";
 
 function Posts() {
-	const data = useSelector((state) => state.tweets.tweetArray);
-	const personalTweets = data.filter((tweet) => tweet.name === "Shadab Khan");
+	const personalTweets = useSelector((state) => state.tweets.personalTweets);
+	// const personalTweets = data.filter((tweet) => tweet.name === "Shadab Khan");
 
 	return (
 		<div style={{ padding: "0.5rem" }}>
 			<WriteTweet />
-			{personalTweets.map((tweet, index) => (
+			{personalTweets && personalTweets.map((tweet, index) => (
 				<IndividualTweet
 					key={index}
 					name={tweet.name}
