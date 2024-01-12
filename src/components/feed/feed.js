@@ -8,11 +8,12 @@ import { useState, useEffect } from "react";
 function Feed() {
 	const [displayOrder, setDisplayOrder] = useState([]);
 	const peopleFollowed = useSelector((state) => state.following.people);
-	const personalTweets = useSelector(state => state.tweets.personalTweet) 
+	const personalTweets = useSelector((state) => state.tweets.personalTweet) 
 	const names = peopleFollowed.map((people) => people.name);
 	const peopleTweets = useSelector((state) => state.tweets.tweetArray);
 
 	useEffect(() => {
+		setDisplayOrder([])
 		let peopleTweetsSort = peopleTweets.filter(
 			(tweet) => names.includes(tweet.name)
 		);
@@ -36,7 +37,7 @@ function Feed() {
 			<div className="main-container">
 				<WriteTweet />
 				<div className="feed-container">
-					{displayOrder.map((tweet) => (
+					{displayOrder && displayOrder.map((tweet) => (
 						<IndividualTweet
 							key={tweet.name}
 							name={tweet.name}
