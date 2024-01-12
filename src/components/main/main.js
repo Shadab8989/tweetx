@@ -12,7 +12,7 @@ function Main() {
 	const [loginStatus, setLoginStatus] = useState(false);
 
 	const handleSubmit = (email, password) => {
-		if (email === defaultEmail && password === defaultPassword) {
+		if (email.toLowerCase() === defaultEmail && password === defaultPassword) {
 			setLoginStatus(true);
 		} else {
 			alert("Invalid Email or Password");

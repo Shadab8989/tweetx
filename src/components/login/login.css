@@ -37,7 +37,8 @@ button {
 }
 
 .forgot {
-	width: 9rem !important;
+	width: fit-content !important;
+	text-align: left;
 }
 
 .forgot-password-div {
