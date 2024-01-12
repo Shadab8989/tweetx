@@ -29,7 +29,7 @@ function Navbar() {
 										isActive ? "nav-link active link-active" : "nav-link"
 									}
 									aria-current="page"
-									to="/Feed"
+									to="/feed"
 								>
 									Feed
 								</NavLink>

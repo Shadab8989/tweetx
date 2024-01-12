@@ -11,18 +11,16 @@ function LoginPage({ handleSubmit, changePassword }) {
 
 	const forgetDivRef = useRef(null);
 
-	const HandleSubmit = (event) => {
-		event.preventDefault();
+	const HandleSubmit = () => {
 		handleSubmit(email, password);
 	};
 	return (
-		<div>
+		<div className="container">
 			<h1>TweetX</h1>
 			<form
 				className="formClass"
 				onSubmit={(event) => {
 					event.preventDefault();
-					HandleSubmit(event)
 				}}
 			>
 				<input
@@ -52,7 +50,7 @@ function LoginPage({ handleSubmit, changePassword }) {
 					>
 						Forgot Password?
 					</button>
-					<button className="submit" type="submit">
+					<button className="submit" onClick={HandleSubmit}>
 						Login
 					</button>
 				</div>
