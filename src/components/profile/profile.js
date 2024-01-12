@@ -13,7 +13,6 @@ function Profile() {
 
 	return (
 		<div className="main-div">
-			<p>Profile</p>
 			<div className="profile-info-container">
 				<div className="image-placeholder"></div>
 				<div className="Profile-info">

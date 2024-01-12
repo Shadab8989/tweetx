@@ -15,7 +15,7 @@ function LoginPage({ handleSubmit, changePassword }) {
 		handleSubmit(email, password);
 	};
 	return (
-		<div className="container">
+		<div className="login-container">
 			<h1>TweetX</h1>
 			<form
 				className="formClass"

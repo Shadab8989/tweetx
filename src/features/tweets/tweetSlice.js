@@ -82,7 +82,7 @@ const tweetSlice = createSlice({
 	initialState,
 	reducers: {
 		addTweet: (state, action) => {
-			state.tweetArray.unshift(action.payload);
+			state.tweetArray.push(action.payload);
 			state.personalTweet += 1;
 		},
 	},
