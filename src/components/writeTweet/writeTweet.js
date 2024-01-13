@@ -3,7 +3,7 @@ import "./writeTweet.css";
 import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTweet } from "../../features/tweets/tweetSlice";
-function WriteTweet() {
+function WriteTweet({tweetsOrder}) {
 	const [input, setInput] = useState("");
 	const divRef = useRef(null);
 
@@ -25,6 +25,8 @@ function WriteTweet() {
 				time: "0 mins ago",
 			};
 			setInput("");
+			if(tweetsOrder){
+				tweetsOrder([])}
 			divRef.current.classList.remove("display-block");
 			dispatch(addTweet(tweetObj));
 		}
