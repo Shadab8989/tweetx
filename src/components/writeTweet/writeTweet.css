@@ -25,3 +25,9 @@
 .button-div > * {
 	border-radius: 7px;
 }
+
+.write-btn:hover{
+    background-color: rgb(230, 127, 144);
+    border: 2px solid black;
+	color: white;
+}

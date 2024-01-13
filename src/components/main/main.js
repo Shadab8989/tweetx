@@ -31,7 +31,7 @@ function Main() {
 					changePassword={changePassword}
 				/>
 			) : (
-				<Content />
+				<Content changeLoginStatus={setLoginStatus}/>
 			)}
 		</Provider>
 	);

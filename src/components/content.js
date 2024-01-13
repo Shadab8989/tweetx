@@ -5,10 +5,10 @@ import Users from './users/users'
 import Feed from './feed/feed'
 import Profile from './profile/profile'
 
-function Content() {
+function Content({changeLoginStatus}) {
   return (
     <HashRouter>
-    <Navbar />
+    <Navbar changeLoginStatus = {changeLoginStatus}/>
     <Routes> 
           <Route path="/" element={<Feed />} />
           <Route path="/feed" element={<Feed />} />

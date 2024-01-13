@@ -13,16 +13,15 @@ function Individual({ name, followers, status }) {
 		followers: followers,
 	};
 
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
 	const handleClick = () => {
 		if (followState === "Follow") {
 			setFollowState("Following");
-      dispatch(follow(personObj))
-
+			dispatch(follow(personObj));
 		} else {
 			setFollowState("Follow");
-      dispatch(unfollow(personObj))
+			dispatch(unfollow(personObj));
 		}
 	};
 	return (

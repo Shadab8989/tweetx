@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import './navbar.css'
 
-function Navbar() {
+function Navbar({changeLoginStatus}) {
 	return (
 		<>
 			<nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -55,6 +55,7 @@ function Navbar() {
 								</NavLink>
 							</li>
 						</ul>
+						<button className="btn btn-outline-success my-2 my-sm-0 loginBtn" onClick={()=>{changeLoginStatus(false)}}>Logout</button>
 					</div>
 				</div>
 			</nav>
