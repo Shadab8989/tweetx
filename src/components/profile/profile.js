@@ -4,23 +4,55 @@ import { useState } from "react";
 import Posts from "./posts/posts";
 import Followers from "./followers/followers";
 import Following from "./following/following";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import {updatePic} from '../../features/following/followingSlice'
 function Profile() {
 	const [content, setContent] = useState("Post");
+
+
+	const personalInfo = useSelector(state => state.following.ourself)
+
+	const dispatch = useDispatch();
 
 	const followingData = useSelector((state) => state.following.people);
 	const tweetData = useSelector((state) => state.tweets.personalTweet);
 
+	const handleProfilePhotoUpdate = () => {
+		let input = document.createElement("input");
+		input.setAttribute("type", "file");
+		input.setAttribute("accept", ".png,.jpeg,.jpg");
+		input.click();
+		input.addEventListener("change", (e) => {
+			let image = input.files[0];
+			let url = URL.createObjectURL(image);
+			dispatch(updatePic(url))
+		});
+	};
+	const handleProfilePhotoReset = () => {
+		dispatch(updatePic(`${process.env.PUBLIC_URL}/images/default-person.png`))
+	};
+
 	return (
 		<div className="main-div">
 			<div className="profile-info-container">
-				<div className="image-placeholder"></div>
+				<div className="profile-image-div">
+					<div className="image-placeholder">
+						<img
+							src={personalInfo.img}
+							alt="profile-img"
+						/>
+					</div>
+					<div className="profilePic-btn-div">
+						<button onClick={handleProfilePhotoReset}>Reset</button>
+						<button onClick={handleProfilePhotoUpdate}>Update</button>
+					</div>
+				</div>
 				<div className="Profile-info">
 					<div style={{ width: "100%" }}>
-						<h2>Shadab Khan</h2>
+						<h2>{personalInfo.name}</h2>
 						<div className="number-info">
 							<p>Posts: {tweetData.length}</p>
-							<p>Followers: 4</p>
+							<p>Followers: {personalInfo.followers}</p>
 							<p>Following: {followingData.length}</p>
 						</div>
 					</div>

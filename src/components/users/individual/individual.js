@@ -1,29 +1,28 @@
 import React from "react";
 import "./individual.css";
 import { useState } from "react";
-import PersonImage from "../../personImage";
+import PersonImage from "../../personalImage/personImage";
 import { useDispatch } from "react-redux";
-import { follow,unfollow } from "../../../features/following/followingSlice";
+import { follow, unfollow } from "../../../features/following/followingSlice";
 import { useEffect, useRef } from "react";
 
-function Individual({ name, followers, status }) {
+function Individual({ name, followers, status,image }) {
 	const [followState, setFollowState] = useState(status);
-	const followBtnRef = useRef(null)
+	const followBtnRef = useRef(null);
 
 	const personObj = {
 		name: name,
 		followers: followers,
 	};
 
-	useEffect(()=> {							//using useeffect, as only after the component is rendered, ref would be created.
-		if(followState === "Following"){
+	useEffect(() => {
+		//using useeffect, as only after the component is rendered, ref would be created.
+		if (followState === "Following") {
 			followBtnRef.current.classList.add("following");
+		} else {
+			followBtnRef.current.classList.remove("following");
 		}
-		else{
-			followBtnRef.current.classList.remove("following")
-		}
-
-	},[followState])
+	}, [followState]);
 
 	const dispatch = useDispatch();
 

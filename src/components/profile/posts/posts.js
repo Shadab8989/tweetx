@@ -1,13 +1,15 @@
 import React from "react";
-import IndividualTweet from "../../feed/individualTweet/individualTweet";
+import IndividualTweet from "../../individualTweet/individualTweet";
 import WriteTweet from "../../writeTweet/writeTweet";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
+import { nanoid } from "@reduxjs/toolkit";
 
 function Posts() {
 	const [tweets, setTweets] = useState([]);
 	const personalTweets = useSelector((state) => state.tweets.personalTweet);
-
+	const personalInfo = useSelector((state) => state.following.ourself )
+ 
 	useEffect(() => {
 		setTweets(personalTweets);
 	}, [personalTweets]);
@@ -15,19 +17,15 @@ function Posts() {
 	return (
 		<div style={{ padding: "0.5rem" }}>
 			<WriteTweet />
-			{tweets &&
-				tweets.map((tweet, index) => (
-					<IndividualTweet
-						key={index}
-						name={tweet.name}
-						time={tweet.time}
-						content={tweet.content}
-					/>
-				))}
-
-			{/* <IndividualTweet />
-      <IndividualTweet />
-      <IndividualTweet /> */}
+			{tweets.map((tweet) => (
+				<IndividualTweet
+					key={nanoid()}
+					name={tweet.name}
+					time={tweet.time}
+					content={tweet.content}
+					img={personalInfo.img}
+				/>
+			))}
 		</div>
 	);
 }

@@ -1,11 +1,14 @@
 import React from "react";
 import "./writeTweet.css";
 import { useRef, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { addTweet } from "../../features/tweets/tweetSlice";
-function WriteTweet({tweetsOrder}) {
+
+function WriteTweet() {
 	const [input, setInput] = useState("");
 	const divRef = useRef(null);
+
+	const personalInfo = useSelector(state => state.following.ourself);
 
 	const dispatch = useDispatch();
 
@@ -23,10 +26,9 @@ function WriteTweet({tweetsOrder}) {
 				name: "Shadab Khan",
 				content: input,
 				time: "0 mins ago",
+				img:personalInfo.img
 			};
 			setInput("");
-			if(tweetsOrder){
-				tweetsOrder([])}
 			divRef.current.classList.remove("display-block");
 			dispatch(addTweet(tweetObj));
 		}

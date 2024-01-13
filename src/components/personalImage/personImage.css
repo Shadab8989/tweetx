@@ -1,0 +1,14 @@
+.personImage-container{
+    border-radius: 50%;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: 0.3rem;
+    border: 1px solid black;
+}
+
+
+img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}

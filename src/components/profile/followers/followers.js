@@ -1,6 +1,7 @@
 import React from "react";
 import Individual from "../../users/individual/individual";
 import { useSelector } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
 
 function Followers() {
 	const data = useSelector((state) => state.following.people);
@@ -24,7 +25,7 @@ function Followers() {
 				return (
 					<>
 						<Individual
-							key={person.name}
+							key={nanoid()}
 							name={person.name}
 							followers={person.followers}
 							status={updatedState(person)}

@@ -2,9 +2,10 @@ import React from "react";
 import "./users.css";
 import Individual from "./individual/individual";
 import { useSelector } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
 
 function Users() {
-  const data = useSelector(state => state.following.people)
+	const data = useSelector((state) => state.following.people);
 
 	const usersArray = [
 		{ name: "Person 1", followers: 2000 },
@@ -13,12 +14,11 @@ function Users() {
 		{ name: "Person 4", followers: 580 },
 	];
 
-  const updatedState = (user) => {
-
-    let persent = data.filter((person) => person.name === user.name)
-    if(persent.length) return "Following"
-    else return "Follow"
-  }
+	const updatedState = (user) => {
+		let present = data.filter((person) => person.name === user.name);
+		if (present.length) return "Following";
+		else return "Follow";
+	};
 
 	return (
 		<>
@@ -27,7 +27,7 @@ function Users() {
 					return (
 						<>
 							<Individual
-								key={user.name}
+								key={nanoid()}
 								name={user.name}
 								followers={user.followers}
 								status={updatedState(user)}

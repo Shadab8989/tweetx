@@ -1,6 +1,13 @@
 .main-div {
 	width: 30rem;
-	margin: auto;
+	max-width: 95%;
+	min-height: 30rem;
+	height: fit-content;
+	margin: 2rem auto;
+	border-radius: 10px;
+	box-shadow: -8px 9px 47px 4px rgba(0,0,0,0.75);
+-webkit-box-shadow: -8px 9px 47px 4px rgba(0,0,0,0.75);
+-moz-box-shadow: -8px 9px 47px 4px rgba(0,0,0,0.75);
 }
 
 .profile-info-container {
@@ -19,6 +26,19 @@
 	margin: 1rem;
 }
 
+.profilePic-btn-div{
+	display: flex;
+	justify-content: space-around;
+}
+
+.profilePic-btn-div > *{
+	border-radius: 7px;
+	width: fit-content !important;
+	border: 2px solid black;
+	font-size: 1rem;
+	margin-bottom: 0.5rem;
+}
+
 .Profile-info {
 	width: 70%;
 	height: 100%;
@@ -30,14 +50,14 @@
 .number-info {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .container-2 {
 	border-top: none;
 	padding: 1rem;
 	width: 100%;
-	height: fit-content;
+	/* height: 10rem; */
 	margin: auto;
 }
 

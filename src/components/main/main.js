@@ -9,7 +9,7 @@ function Main() {
 	const defaultEmail = "sk@gmail.com";
 	let defaultPassword = "123";
 
-	const [loginStatus, setLoginStatus] = useState(false);
+	const [loginStatus, setLoginStatus] = useState(true);
 
 	const handleSubmit = (email, password) => {
 		if (email.toLowerCase() === defaultEmail && password === defaultPassword) {
@@ -31,7 +31,7 @@ function Main() {
 					changePassword={changePassword}
 				/>
 			) : (
-				<Content changeLoginStatus={setLoginStatus}/>
+				<Content changeLoginStatus={setLoginStatus} />
 			)}
 		</Provider>
 	);

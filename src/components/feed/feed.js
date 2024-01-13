@@ -1,21 +1,23 @@
 import React from "react";
 import "./feed.css";
-import IndividualTweet from "./individualTweet/individualTweet";
+import IndividualTweet from "../individualTweet/individualTweet";
 import { useSelector } from "react-redux";
 import WriteTweet from "../writeTweet/writeTweet";
 import { useState, useEffect } from "react";
+import { nanoid } from "@reduxjs/toolkit";
 
 function Feed() {
 	const [displayOrder, setDisplayOrder] = useState([]);
 
 	const peopleFollowed = useSelector((state) => state.following.people);
-	const personalTweets = useSelector((state) => state.tweets.personalTweet) 
+	const personalTweets = useSelector((state) => state.tweets.personalTweet);
 	const names = peopleFollowed.map((people) => people.name);
 	const peopleTweets = useSelector((state) => state.tweets.tweetArray);
+	const personalInfo = useSelector((state) => state.following.ourself);
 
 	useEffect(() => {
-		let peopleTweetsSort = peopleTweets.filter(
-			(tweet) => names.includes(tweet.name)
+		let peopleTweetsSort = peopleTweets.filter((tweet) =>
+			names.includes(tweet.name)
 		);
 		const sortFunction = (obj1, obj2) => {
 			let t1, t2;
@@ -30,23 +32,22 @@ function Feed() {
 		};
 		peopleTweetsSort.sort((a, b) => sortFunction(a, b));
 		setDisplayOrder(personalTweets.concat(peopleTweetsSort));
-
 	}, [peopleFollowed, personalTweets]);
 
 	return (
 		<>
 			<div className="main-container">
-				<WriteTweet tweetsOrder={setDisplayOrder}/>
+				<WriteTweet />
 				<div className="feed-container">
-					{displayOrder && displayOrder.map((tweet) => (
+					{displayOrder.map((tweet) => (
 						<IndividualTweet
-							key={tweet.name}
+							key={nanoid()}
 							name={tweet.name}
 							time={tweet.time}
 							content={tweet.content}
+							img={tweet.name !== personalInfo.name?tweet.img:personalInfo.img}
 						/>
-					))
-					}
+					))}
 				</div>
 			</div>
 		</>

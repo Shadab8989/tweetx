@@ -1,11 +1,11 @@
 import React from "react";
 import "./individualTweet.css";
-import PersonImage from "../../personImage";
+import PersonImage from "../personalImage/personImage";
 
-function IndividualTweet({ name, time, content }) {
+function IndividualTweet({ name, time, content, img }) {
 	return (
 		<div className="tweet-container">
-			<PersonImage />
+			<PersonImage image={img} />
 			<div className="tweet-content">
 				<div className="tweet-head">
 					<h3>{name}</h3>

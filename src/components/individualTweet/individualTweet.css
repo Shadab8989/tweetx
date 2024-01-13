@@ -18,4 +18,5 @@
 
 .tweet-para{
     text-align: left;
+    word-wrap:break-word ;
 }

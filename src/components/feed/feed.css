@@ -1,9 +1,14 @@
 .main-container {
 	width: 30rem;
 	margin: 2rem auto;
-	/* border: 2px solid black; */
+	max-width: 95%;
+	min-height: 30rem;
 	height: fit-content;
 	padding: 1rem;
+	border-radius: 10px;
+	box-shadow: -8px 9px 47px 4px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: -8px 9px 47px 4px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: -8px 9px 47px 4px rgba(0, 0, 0, 0.75);
 }
 
 .write-btn {

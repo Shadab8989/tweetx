@@ -5,7 +5,7 @@ import './navbar.css'
 function Navbar({changeLoginStatus}) {
 	return (
 		<>
-			<nav className="navbar navbar-expand-lg bg-body-tertiary">
+			<nav className="navbar navbar-expand-lg bg-body-tertiary w-100">
 				<div className="container-fluid">
 					<Link className="navbar-brand text" to="/">
 						TweetX
