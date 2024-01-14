@@ -25,7 +25,7 @@ function IndividualTweet({ name, time, content, img, uniqueTweetKey }) {
 			<PersonImage image={img} />
 			<div className="tweet-content">
 				<div className="tweet-head">
-					<h3>{name}</h3>
+					<h5>{name}</h5>
 					<button className="delete-btn" onClick={handleClick}>
 					{name === personalInfo.name?"Delete":"Unfollow"}
 					</button>

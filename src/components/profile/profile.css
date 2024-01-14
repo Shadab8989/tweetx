@@ -31,6 +31,13 @@
 	justify-content: space-around;
 }
 
+.profilePic-btn-div > *:hover{
+	background-color: rgb(230, 127, 144);
+    border: 2px solid black;
+	color: white;
+
+}
+
 .profilePic-btn-div > *{
 	border-radius: 7px;
 	width: fit-content !important;

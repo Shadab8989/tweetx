@@ -39,8 +39,8 @@ function Individual({ name, followers, status,image }) {
 		<div className="container">
 			<PersonImage />
 			<div className="person-info">
-				<h4>{name}</h4>
-				<p>Followers:{followers}</p>
+				<h5>{name}</h5>
+				<p style={{fontSize:'0.9rem'}} >Followers: {followers}</p>
 			</div>
 			<button className="follow-btn" ref={followBtnRef} onClick={handleClick}>
 				{followState}
