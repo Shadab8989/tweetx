@@ -2,7 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
 	people: [],
-	ourself: { name: "Shadab Khan", followers: 4, img: `${process.env.PUBLIC_URL}/images/default-person.png` },
+	ourself: {
+		name: "Shadab Khan",
+		followers: 4,
+		img: `${process.env.PUBLIC_URL}/images/default-person.png`,
+	},
 };
 
 export const followingSlice = createSlice({
@@ -14,7 +18,12 @@ export const followingSlice = createSlice({
 		},
 		unfollow: (state, action) => {
 			state.people = state.people.filter(
-				(person) => person.name !== action.payload.name
+				(person) => {
+					if(action.payload.name){
+						return person.name !== action.payload.name
+					}
+					else{return person.name !== action.payload}
+					}
 			);
 		},
 		updatePic: (state, action) => {
@@ -23,5 +32,5 @@ export const followingSlice = createSlice({
 	},
 });
 
-export const { follow, unfollow,updatePic } = followingSlice.actions;
+export const { follow, unfollow, updatePic } = followingSlice.actions;
 export default followingSlice.reducer;

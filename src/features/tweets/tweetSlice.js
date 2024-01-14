@@ -85,10 +85,10 @@ const tweetSlice = createSlice({
 			state.personalTweet.unshift(action.payload);
 		},
 		deleteTweet:(state,action) => {
-			state.personalTweet = state.personalTweet.filter(tweet => tweet.key !== action.payload)
+			state.personalTweet = state.personalTweet.filter(tweet => tweet.tweetKey !== action.payload)
 		},
 	},
 });
 
-export const { addTweet } = tweetSlice.actions;
+export const { addTweet,deleteTweet } = tweetSlice.actions;
 export default tweetSlice.reducer;

@@ -3,6 +3,7 @@ import "./writeTweet.css";
 import { useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addTweet } from "../../features/tweets/tweetSlice";
+import { nanoid } from "@reduxjs/toolkit";
 
 function WriteTweet() {
 	const [input, setInput] = useState("");
@@ -26,7 +27,8 @@ function WriteTweet() {
 				name: "Shadab Khan",
 				content: input,
 				time: "0 mins ago",
-				img:personalInfo.img
+				img:personalInfo.img,
+				tweetKey: nanoid(),
 			};
 			setInput("");
 			divRef.current.classList.remove("display-block");

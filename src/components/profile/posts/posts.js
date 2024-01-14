@@ -24,6 +24,7 @@ function Posts() {
 					time={tweet.time}
 					content={tweet.content}
 					img={personalInfo.img}
+					uniqueTweetKey = {tweet.tweetKey}
 				/>
 			))}
 		</div>

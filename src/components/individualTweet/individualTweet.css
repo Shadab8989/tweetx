@@ -9,6 +9,10 @@
 
 }
 
+.tweet-container:hover .delete-btn{
+    display: block;
+}
+
 .tweet-content{
     display: flex;
     flex-direction: column;
@@ -30,6 +34,7 @@
     background-color: none;
     height: 70%;
     border-radius: 7px;
+    display: none;
 }
 
 .delete-btn >img{

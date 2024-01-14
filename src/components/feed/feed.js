@@ -46,6 +46,7 @@ function Feed() {
 							time={tweet.time}
 							content={tweet.content}
 							img={tweet.name !== personalInfo.name?tweet.img:personalInfo.img}
+							uniqueTweetKey = {tweet.tweetKey}
 						/>
 					))}
 				</div>
