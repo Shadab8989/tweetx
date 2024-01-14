@@ -40,6 +40,11 @@ button {
 	width: fit-content !important;
 	text-align: left;
 }
+.forgot:hover,.cancel-password-change:hover{
+	background-color: black;
+    border: 2px solid black;
+	color: white;
+}
 
 .forgot-password-div {
 	display: flex;
@@ -56,4 +61,10 @@ button {
 
 .display-none{
     display: none !important;
+}
+
+.submit:hover,.confirm-password-change:hover{
+	background-color: rgb(230, 127, 144);
+    border: 2px solid black;
+	color: white;
 }

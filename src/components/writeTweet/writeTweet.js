@@ -45,10 +45,10 @@ function WriteTweet() {
 					onChange={(e) => setInput(e.target.value)}
 				></textarea>
 				<div className="button-div">
-					<button style={{ margin: "0.5rem" }} onClick={handleDiscardClick}>
+					<button className="discard-btn" style={{ margin: "0.5rem" }} onClick={handleDiscardClick}>
 						Discard
 					</button>
-					<button onClick={handlePost}>Post</button>
+					<button className="post-btn" onClick={handlePost}>Post</button>
 				</div>
 			</div>
 		</div>

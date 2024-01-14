@@ -77,7 +77,7 @@ function LoginPage({ handleSubmit, changePassword }) {
 				/>
 				<div className="buttonDiv">
 					<button
-						className="confirm-password-btn"
+						className="cancel-password-change"
 						onClick={() => {
 							forgetDivRef.current.classList.add("display-none");
 						}}
@@ -85,7 +85,7 @@ function LoginPage({ handleSubmit, changePassword }) {
 						Cancel
 					</button>
 					<button
-						className="confirm-password-btn"
+						className="confirm-password-change"
 						onClick={() => {
 							if (newPass === reEnter) {
 								changePassword(newPass);

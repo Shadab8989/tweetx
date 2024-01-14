@@ -26,8 +26,13 @@
 	border-radius: 7px;
 }
 
-.write-btn:hover{
+.write-btn:hover,.post-btn:hover{
     background-color: rgb(230, 127, 144);
+    border: 2px solid black;
+	color: white;
+}
+.discard-btn:hover{
+	background-color: black;
     border: 2px solid black;
 	color: white;
 }
