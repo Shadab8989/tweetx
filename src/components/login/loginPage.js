@@ -3,8 +3,8 @@ import "./login.css";
 import { useState, useRef } from "react";
 
 function LoginPage({ handleSubmit, changePassword }) {
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const [email, setEmail] = useState("sk@gmail.com");
+	const [password, setPassword] = useState("123");
 
 	const [newPass, setNewPass] = useState();
 	const [reEnter, setReEnter] = useState();
@@ -31,6 +31,7 @@ function LoginPage({ handleSubmit, changePassword }) {
 					}}
 					placeholder="Email"
 					className="emailInput"
+					readOnly
 				/>
 				<input
 					type="password"
@@ -40,6 +41,7 @@ function LoginPage({ handleSubmit, changePassword }) {
 					}}
 					placeholder="Password"
 					className="passwordInput"
+					readOnly
 				/>
 				<div className="buttonDiv">
 					<button
@@ -89,6 +91,7 @@ function LoginPage({ handleSubmit, changePassword }) {
 						onClick={() => {
 							if (newPass === reEnter) {
 								changePassword(newPass);
+								setPassword(newPass)
 								forgetDivRef.current.classList.add("display-none");
 							} else {
 								alert("Passwords don't match");

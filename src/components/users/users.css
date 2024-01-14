@@ -1,6 +1,7 @@
 .users-container {
 	width: 30rem;
 	max-width: 95%;
+	min-height: 45rem;
 	height: fit-content;
 	margin: 2rem auto;
 	padding: 2rem;
