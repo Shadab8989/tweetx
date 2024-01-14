@@ -5,10 +5,13 @@
     margin-top: 1rem;
     border-radius: 10px;
     padding: 0.5rem;
+    padding-bottom: 0;
 
 }
 
 .tweet-content{
+    display: flex;
+    flex-direction: column;
     width: 75%;
 }
 .tweet-head{
@@ -19,4 +22,20 @@
 .tweet-para{
     text-align: left;
     word-wrap:break-word ;
+}
+
+.delete-btn{
+    align-self: center;
+    border: 1px solid black; 
+    background-color: none;
+    height: 70%;
+    border-radius: 7px;
+}
+
+.delete-btn >img{
+    width: 2rem;
+}
+
+.time-para{
+    align-self: flex-end;
 }

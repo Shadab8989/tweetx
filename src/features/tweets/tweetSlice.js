@@ -84,6 +84,9 @@ const tweetSlice = createSlice({
 		addTweet: (state, action) => {
 			state.personalTweet.unshift(action.payload);
 		},
+		deleteTweet:(state,action) => {
+			state.personalTweet = state.personalTweet.filter(tweet => tweet.key !== action.payload)
+		},
 	},
 });
 
