@@ -36,3 +36,9 @@
     border: 2px solid black;
 	color: white;
 }
+
+.disabled:hover{
+	cursor:not-allowed;
+	background-color: rgb(255, 196, 206);
+}
+

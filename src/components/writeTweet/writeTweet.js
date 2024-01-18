@@ -1,6 +1,6 @@
 import React from "react";
 import "./writeTweet.css";
-import { useRef, useState } from "react";
+import { useRef, useState,useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addTweet } from "../../features/tweets/tweetSlice";
 import { nanoid } from "@reduxjs/toolkit";
@@ -8,10 +8,21 @@ import { nanoid } from "@reduxjs/toolkit";
 function WriteTweet() {
 	const [input, setInput] = useState("");
 	const divRef = useRef(null);
+	const postRef = useRef(null);
 
 	const personalInfo = useSelector(state => state.following.ourself);
 
 	const dispatch = useDispatch();
+
+	useEffect(()=>{
+		if(!input){
+			postRef.current.classList.add('disabled')
+		}
+		else{
+			postRef.current.classList.remove('disabled')
+		}
+
+	},[input])
 
 	const handleWriteClick = () => {
 		divRef.current.classList.add("display-block");
@@ -50,7 +61,7 @@ function WriteTweet() {
 					<button className="discard-btn" style={{ margin: "0.5rem" }} onClick={handleDiscardClick}>
 						Discard
 					</button>
-					<button className="post-btn" onClick={handlePost}>Post</button>
+					<button ref={postRef} className="post-btn disabled" onClick={handlePost} disabled={input === ""}>Post</button>
 				</div>
 			</div>
 		</div>
